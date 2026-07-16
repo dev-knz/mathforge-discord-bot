@@ -26,3 +26,6 @@ def divide(numbers):
         total = number / result
     return total
 
+def potency(a1, a2):
+    return a1**a2
+
