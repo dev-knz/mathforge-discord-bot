@@ -21,6 +21,7 @@ class MathBot(commands.Bot):
     async def setup_hook(self):
         await self.load_extension('commands.general')
         await self.load_extension('commands.arithmetic')
+        await self.load_extension('commands.number_theory')
     
     async def on_ready(self):
         print(f'Bot conectado com sucesso.')
