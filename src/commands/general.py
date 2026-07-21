@@ -23,5 +23,11 @@ class General(commands.Cog):
             "Olá! Sou o MathBot 🤖"
         )
 
+    @commands.command()
+    async def help(self, ctx):
+        await ctx.send(
+            "Estou sendo desenvolvido, confira mais na minha pagina do github."
+        )
+
 async def setup(bot):
     await bot.add_cog(General(bot))

@@ -10,7 +10,7 @@ class Arithmetic(commands.Cog):
 
     @commands.command()
     async def somar(self, ctx, *numeros: int):
-            await ctx.send(add(numeros))
+        await ctx.send(add(numeros))
 
     @commands.command()
     async def subtrair(self, ctx, *numeros: int):

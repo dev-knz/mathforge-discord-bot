@@ -15,6 +15,7 @@ class MathBot(commands.Bot):
     def __init__(self):
         super().__init__(
             command_prefix = 'k!',
+            help_command=None,
             intents = intents
         )
 
@@ -22,6 +23,7 @@ class MathBot(commands.Bot):
         await self.load_extension('commands.general')
         await self.load_extension('commands.arithmetic')
         await self.load_extension('commands.number_theory')
+        await self.load_extension('commands.crud')
     
     async def on_ready(self):
         print(f'Bot conectado com sucesso.')
