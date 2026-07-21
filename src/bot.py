@@ -23,10 +23,11 @@ class MathBot(commands.Bot):
         await self.load_extension('commands.general')
         await self.load_extension('commands.arithmetic')
         await self.load_extension('commands.number_theory')
-        await self.load_extension('commands.crud')
+        await self.load_extension('commands.treino')
     
     async def on_ready(self):
         print(f'Bot conectado com sucesso.')
+
 bot = MathBot()
 bot.run(TOKEN)
 
