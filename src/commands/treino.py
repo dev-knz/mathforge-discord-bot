@@ -12,9 +12,7 @@ class Treino(commands.Cog):
     async def treino(self, ctx):
         usuario = get_or_create_user(ctx)
 
-        await ctx.send(f'{usuario.nome}')
-
-        
+        await ctx.send(f'{usuario.nome}')    
 
 async def setup(bot):
     await bot.add_cog(Treino(bot))   

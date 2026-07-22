@@ -22,6 +22,10 @@ class General(commands.Cog):
         await ctx.send(
             "Olá! Sou o MathBot 🤖"
         )
+    
+    @commands.command()
+    async def say(self, ctx, content: str):
+        await ctx.send(content)
 
     @commands.command()
     async def help(self, ctx):
