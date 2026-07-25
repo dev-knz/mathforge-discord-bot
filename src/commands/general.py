@@ -24,7 +24,7 @@ class General(commands.Cog):
         )
     
     @commands.command()
-    async def say(self, ctx, content: str):
+    async def say(self, ctx, *,content: str):
         await ctx.send(content)
 
     @commands.command()

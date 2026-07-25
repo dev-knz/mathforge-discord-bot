@@ -7,6 +7,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
+
 TOKEN = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.all()
 
