@@ -26,14 +26,36 @@ def get_select():
 
     async def callback(interaction: discord.Interaction):
         escolhido = get_options(interact=interaction)
+
+        # Definir a categoria ID, futuramente integrar isso em um comando
+        guild = interaction.guild
+        categoria = interaction.guild.get_channel(1532107144571125831)
+
+        # Permissoes ; vou ajustar melhor isso aqui depois
+        overwrites = {
+        interaction.guild.default_role: discord.PermissionOverwrite(
+        view_channel=False
+        ),
+        interaction.user: discord.PermissionOverwrite(
+        view_channel=True,
+        send_messages=True,
+        read_message_history=True
+        ),
+        interaction.guild.me: discord.PermissionOverwrite(
+        view_channel=True
+        )
+}
+        canal = await interaction.guild.create_text_channel(f'treino-{interaction.user.name}', category=categoria, overwrites=overwrites)
+
         menuSelection.disabled = True
         await interaction.response.edit_message(
             view=view
         )
 
         await interaction.followup.send(
-            f"Área escolhida: {escolhido}"
+            f"Canal criado com sucesso, acesse aqui: {canal.mention}", ephemeral=True
         )
+        
     menuSelection.callback = callback
     view = discord.ui.View()
     view.add_item(menuSelection)

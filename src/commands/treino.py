@@ -20,26 +20,6 @@ class Treino(commands.Cog):
         await ctx.reply(view=view)
 
     @commands.command()
-    async def enviar_button(self, ctx):
-        async def select_resposta(interact: discord.Interaction):
-            escolha = interact.data['values'][0]
-            jogos = {'1': 'Free Fire', '2': 'Minecraft', '3':'Roblox'}
-            jogo_escolhido = jogos[escolha]
-            await interact.response.send_message(f'O jogo escolhido foi: {jogo_escolhido}')
-
-        menuSelecao = discord.ui.Select(placeholder='Selecione uma opção')
-        opcoes = [
-            discord.SelectOption(label='Free Fire', value='1'),
-            discord.SelectOption(label='Minecraft', value='2'),
-            discord.SelectOption(label='Roblox', value='3')
-        ]
-        menuSelecao.options = opcoes
-        menuSelecao.callback = select_resposta
-        view = discord.ui.View()
-        view.add_item(menuSelecao)
-
-        await ctx.reply(view=view)
-    @commands.command()
     async def calcular(self, ctx):
         usuario = get_or_create_user(ctx)
 
