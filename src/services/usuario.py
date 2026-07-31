@@ -11,7 +11,7 @@ def get_or_create_user(ctx):
         if usuario:
             return usuario
 
-        new_usuario = Usuario(ctx.author.name, ctx.author.id, xp=0, nivel=0, moedas=0, streak=0)
+        new_usuario = Usuario(ctx.author.name, ctx.author.id, xp=0, nivel=0, moedas=0, streak=0, channel=False)
         sessao.add(new_usuario)
 
         new_estatistic = Estatistica(ctx.author.id, acerto=0, erro=0, tempo_total=0, melhor_streak=0)

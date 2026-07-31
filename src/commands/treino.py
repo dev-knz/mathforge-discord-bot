@@ -4,7 +4,7 @@ from discord.ext import commands
 from random import randint
 from services.usuario import get_or_create_user
 from math_engine.arithmetic import add
-from services.treino import get_select
+from services.training_service import get_select
 
 class Treino(commands.Cog):
 
